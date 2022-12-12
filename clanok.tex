@@ -1,125 +1,90 @@
-% Metódy inžinierskej práce
 
 \documentclass[10pt,twoside,slovak,a4paper]{article}
 
-\usepackage[slovak]{babel}
-%\usepackage[T1]{fontenc}
-\usepackage[IL2]{fontenc} % lepšia sadzba písmena Ľ než v T1
-\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
-\usepackage{url} % príkaz \url na formátovanie URL
-\usepackage{hyperref} % odkazy v texte budú aktívne (pri niektorých triedach dokumentov spôsobuje posun textu)
+\graphicspath{ {./images/} }
+
+\usepackage[slovak]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[IL2]{fontenc} 
+
+\usepackage{graphicx}
+
+\usepackage{url} 
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdfpagemode=FullScreen,
+}
+
+\usepackage{wrapfig}
 
 \usepackage{cite}
-%\usepackage{times}
+
+\usepackage{indentfirst}
+\setlength{\parindent}{0.5cm}
+% \usepackage{times}
 
 \pagestyle{headings}
 
-\title{Názov\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2022/23, vedenie: Ing. Igor Stupavský}} % meno a priezvisko vyučujúceho na cvičeniach
-
-\author{Svätopluk Puterka\\[2pt]
-	{\small Slovenská technická univerzita v Bratislave}\\
-	{\small Fakulta informatiky a informačných technológií}\\
-	{\small \texttt{xputerkas@stuba.sk}}
-	}
-
-\date{\small 4. október 2022} % upravte
 
 
+\date{\small 4. November 2022}
 
 \begin{document}
 
-\maketitle
 
-\begin{abstract}
-\ldots
-\end{abstract}
+\begin{titlepage}
+	\title{Hra, ako nástroj pre edukáciu?
+	\thanks{Semestrálny projekt v predmete Metódy inžinierskej práce, ak. rok 2022/23, vedenie: Ing. Igor Stupavský}} 
+	\author{Svätopluk Puterka\\[2pt]
+		{\small Slovenská technická univerzita v Bratislave}\\
+		{\small Fakulta informatiky a informačných technológií}\\
+		{\small \texttt{xputerkas@stuba.sk}}
+	}
+\end{titlepage}
 
+{\maketitle }
 
-
-\section{Úvod}
-
-Motivujte čitateľa a vysvetlite, o čom píšete. Úvod sa väčšinou nedelí na časti.
-
-Uveďte explicitne štruktúru článku. Tu je nejaký príklad.
-Základný problém, ktorý bol naznačený v úvode, je podrobnejšie vysvetlený v časti~\ref{nejaka}.
-Dôležité súvislosti sú uvedené v častiach~\ref{dolezita} a~\ref{dolezitejsia}.
-Záverečné poznámky prináša časť~\ref{zaver}.
-
-
-
-\section{Nejaká časť} \label{nejaka}
-
-Z obr.~\ref{f:rozhod} je všetko jasné. 
-
-\begin{figure*}[tbh]
-\centering
-%\includegraphics[scale=1.0]{diagram.pdf}
-Aj text môže byť prezentovaný ako obrázok. Stane sa z neho označný plávajúci objekt. Po vytvorení diagramu zrušte znak \texttt{\%} pred príkazom \verb|\includegraphics| označte tento riadok ako komentár (tiež pomocou znaku \texttt{\%}).
-\caption{Rozhodujúci argument.}
-\label{f:rozhod}
-\end{figure*}
+\input{./sections/uvod.tex}
+\input{./sections/section_vytvorenie_vlastnej_hry.tex}
 
 
 
-\section{Iná časť} \label{ina}
+\section{Počítačove hry na školách}\label{hry-na-skolach-hodiny-programovania}
+Idea vzdelávania detí prostredníctvom počítačových hier v školách by mohla naraziť na 
+rôzne problémy v dnešnom vzdelávacom programe. Učitelia na školách majú málo času, sú striktne 
+nastavené smernice a hodnotenie učiteľov je podmienené výkonom. Otázka by mohla nastať pri chýbajúcich 
+vývojároch hier, ktorí by museli pravidelne konzultovať prípadné konfigurácie náročnosti úrovní, na 
+základe menej porozumených oblastiach učiva. Musela by sa vyriešiť rôznorodá gramotnosť detí v informačných 
+technológií, ktorý by mal určite rôzne úrovne, už len vzhľadom na rôznu finančnú situáciu rodín.\\\\\\
+\indent~Podľa mojich skúseností je náročné udržiavať pozornosť detí, ale aktívnym hraním by to bolo jednoduchšie. Hry 
+deťom spôsobujú radosť, čo by zvyšovalo motiváciu k učeniu. Ďalší aspekt, ktorý by priniesla táto metóda vzdelávania 
+je rozvinutie kreativity pri riešení rôznych hádaniek. Okrem hier individuálneho charakteru zamerania sa 
+by mohol byť istý druh počítačových hier orientovaný na riešenie problémov v skupinách, čo by podnecovalo 
+lepšiu kooperáciu. Tieto získané schopnosti by boli prospešné v ich kariérnej budúcnosti.\\
+\indent~Ako príklad by som uviedol školu \textbf{\href{https://www.q2l.org/}{Q2L-Quest to Learn}} v New York City, kde už v roku 2009 sa 
+zrodila myšlienka učenie hrou a odvtedy na danej škole prebieha špeciálna výuka od 6. do 12. ročníka. 
+Vyučovací proces prostredníctvom rôznych hier sa ukazuje, ako účinná alternatíva klasického vyučovania.
+Pozorovanie na danej škole ukazuje, že u ich študentov zaznamenali väčšiu mieru kooperácie. Ako výhodu v úlohách uvádzajú 
+možnosť opravy, ak žiaci v hre zlyhajú, a tým sa zvyšuje motivácia skúšať znova prejsť danú výzvu, naučiť 
+sa a byť nakoniec úspešný. \\
+V knihe ``Moderní vyučování`` od spisovateľa Geoffrey Petty ~\cite{pettyEd}, sa tiež hovorí, že podľa názoru humanistických psychológov je učenie 
+najľahšie, zmysluplné a najúčinnejšie vtedy, keď prebieha v atmosfére zbavenej akejkoľvek hrozby. Žiaci by nemali byť motivovaní strachom 
+z neúspechu, ale túžbou uspieť, dozvedieť sa viac.“ Pedagógovia si pochvaľujú rýchlu spätnú väzbu od žiakov na prebranú látku. 
+V roku 2015 v ELA skúškach mali ich žiaci nadpriemerné výsledky medzi študentmi z rôznych škôl v rámci mesta.\\
+\indent~Vďaka myšlienke zavedenia hier do školského vzdelávacieho systému by pri dostatočných predpokladoch mohli nastať pozitívne 
+zmeny vo výsledkoch študentov, v čom sa ukazuje nový potenciál aplikácie gemifikácie na školy.
 
-Základným problémom je teda\ldots{} Najprv sa pozrieme na nejaké vysvetlenie (časť~\ref{ina:nejake}), a potom na ešte nejaké (časť~\ref{ina:nejake}).\footnote{Niekedy môžete potrebovať aj poznámku pod čiarou.}
+\section{Dáta o hraní hier}\label{data-o-hrani}
+\section{Slabé a silné stránky učenia sa počítačovými hrami}\label{vyhody-nevyhody-hier}
+\section{Záver} \label{zaver}
 
-Môže sa zdať, že problém vlastne nejestvuje\cite{Coplien:MPD}, ale bolo dokázané, že to tak nie je~\cite{Czarnecki:Staged, Czarnecki:Progress}. Napriek tomu, aj dnes na webe narazíme na všelijaké pochybné názory\cite{PLP-Framework}. Dôležité veci možno \emph{zdôrazniť kurzívou}.
-
-
-\subsection{Nejaké vysvetlenie} \label{ina:nejake}
-
-Niekedy treba uviesť zoznam:
-
-\begin{itemize}
-\item jedna vec
-\item druhá vec
-	\begin{itemize}
-	\item x
-	\item y
-	\end{itemize}
-\end{itemize}
-
-Ten istý zoznam, len číslovaný:
-
-\begin{enumerate}
-\item jedna vec
-\item druhá vec
-	\begin{enumerate}
-	\item x
-	\item y
-	\end{enumerate}
-\end{enumerate}
-
-
-\subsection{Ešte nejaké vysvetlenie} \label{ina:este}
-
-\paragraph{Veľmi dôležitá poznámka.}
-Niekedy je potrebné nadpisom označiť odsek. Text pokračuje hneď za nadpisom.
-
-
-
-\section{Dôležitá časť} \label{dolezita}
-
-
-
-
-\section{Ešte dôležitejšia časť} \label{dolezitejsia}
-
-
-
-
-\section{Záver} \label{zaver} % prípadne iný variant názvu
-
-
-
-%\acknowledgement{Ak niekomu chcete poďakovať\ldots}
-
-
-% týmto sa generuje zoznam literatúry z obsahu súboru literatura.bib podľa toho, na čo sa v článku odkazujete
+\bibliographystyle{plain} 
 \bibliography{literatura}
-\bibliographystyle{plain} % prípadne alpha, abbrv alebo hociktorý iný
 \end{document}
 
