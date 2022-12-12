@@ -13,6 +13,8 @@
 .*.lb
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.fdb_latexmk
 *.bcf
 *.blg
 *-blx.aux
